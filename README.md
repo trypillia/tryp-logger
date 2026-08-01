@@ -14,7 +14,7 @@ A professional logging library for the Trypillia programming language.
 You can install `tryp-logger` using the Trypillia Package Manager (`tryppm`):
 
 ```bash
-tryppm install github:ChernegaSergiy/tryp-logger
+tryppm install github:trypillia/tryp-logger
 ```
 
 ## Usage
