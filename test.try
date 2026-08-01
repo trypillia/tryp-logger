@@ -2,26 +2,23 @@ load "main.try";
 use TrypLogger.Logger;
 use TrypLogger.LogLevel;
 
-// Create instances for different modules
-let authLog = Logger("Auth");
-let dbLog = Logger("Database");
+describe("TrypLogger Test Suite", fn() {
+    it("should initialize with correct default values", fn() {
+        let log = Logger("TestModule");
+        assertEq(log.name, "TestModule");
+        assertEq(log.minLevel, LogLevel["DEBUG"]);
+        assertEq(log.jsonMode, false);
+    });
 
-// Configure database logger
-dbLog.setFile("app.log");
-dbLog.setLevel(LogLevel["WARN"]); // Only show WARN and ERROR
+    it("should update minimum log level correctly", fn() {
+        let log = Logger("TestModule");
+        log.setLevel(LogLevel["WARN"]);
+        assertEq(log.minLevel, LogLevel["WARN"]);
+    });
 
-// Auth logs
-authLog.info("User 'admin' logged in.");
-authLog.debug("Token generated: 12345"); // Debug is shown by default
-
-// DB logs
-dbLog.info("Connected to database."); // This won't be shown because level > INFO
-dbLog.warn("Query took 500ms!");
-dbLog.error("Connection lost.");
-
-// JSON Mode test
-let apiLog = Logger("API");
-apiLog.enableJson(true);
-apiLog.info("Request received: GET /users");
-
-dbLog.close();
+    it("should enable JSON mode", fn() {
+        let log = Logger("TestModule");
+        log.enableJson(true);
+        assertEq(log.jsonMode, true);
+    });
+});
