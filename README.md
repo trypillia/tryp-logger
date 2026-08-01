@@ -1,5 +1,7 @@
 # tryp-logger
 
+[![Run Tests](https://github.com/trypillia/tryp-logger/actions/workflows/test.yml/badge.svg)](https://github.com/trypillia/tryp-logger/actions/workflows/test.yml)
+
 A professional logging library for the Trypillia programming language.
 
 ## Features
