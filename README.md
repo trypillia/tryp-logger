@@ -1,6 +1,7 @@
 # tryp-logger
 
 [![Run Tests](https://github.com/trypillia/tryp-logger/actions/workflows/test.yml/badge.svg)](https://github.com/trypillia/tryp-logger/actions/workflows/test.yml)
+[![Test Coverage](https://img.shields.io/codecov/c/github/trypillia/tryp-logger?label=Test%20Coverage&logo=codecov)](https://app.codecov.io/gh/trypillia/tryp-logger)
 
 A professional logging library for the Trypillia programming language.
 
