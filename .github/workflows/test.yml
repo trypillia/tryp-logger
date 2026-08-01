@@ -20,4 +20,9 @@ jobs:
           version: 'latest'
 
       - name: Run Logger Tests
-        run: trypillia-test test.try
+        run: trypillia-test --coverage test.try
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./coverage.info
